@@ -58,6 +58,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -82,6 +83,15 @@ export default {
 .sound:hover {
   cursor: pointer;
   background-color: #6317a9;
+}
+
+.sound:hover:before {
+  content: "\f144";
+  font-family: FontAwesome;
+  position: absolute;
+  font-size: 70px;
+  opacity: 0.7;
+  color: lightgray;
 }
 
 h1 {
