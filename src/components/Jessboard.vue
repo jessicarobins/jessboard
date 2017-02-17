@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div v-for="sound in sounds">
+  <div class="container">
+    <div v-for="sound in sounds" class="sound">
       {{ sound.name }}
     </div>
   </div>
@@ -12,23 +12,34 @@ export default {
   data () {
     return {
       sounds: [{
-          name: "tony"
+          name: "tony",
+          filename: "tony.mp3"
         }, {
-          name: "it's lunchtime"
+          name: "it's lunchtime",
+          filename: "lunchtime.mp3"
         }, {
-          name: "hey brian"
+          name: "hey brian",
+          filename: "brian.mp3"
         }, {
-          name: "oh nooo"
+          name: "oh nooo",
+          filename: "ohno.mp3"
         }, {
-          name: "laters"
+          name: "laters",
+          filename: "laters.mp3"
         }, {
-          name: "get outta here bear"
+          name: "get outta here bear",
+          filename: "bear.mp3"
         },{
-          name: "hey you guys"
+          name: "hey you guys",
+          filename: "heyyouguys.mp3"
         }, {
-          name: "hi nathalie"
+          name: "hi nathalie",
+          filename: "nathalie.mp3"
         }, {
           name: "giggles"
+        }, {
+          name: "chuckle",
+          filename: "chuckle.mp3"
         }
       ]
     }
@@ -38,21 +49,17 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+.container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
+.sound {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 20px;
+  height: 140px;
+  width: 140px;
 }
 </style>
