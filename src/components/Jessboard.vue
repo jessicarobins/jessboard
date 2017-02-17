@@ -9,8 +9,6 @@
 
 <script>
 
-var tony = require('../assets/tony.mp3')
-
 export default {
   name: 'jessboard',
   data () {
