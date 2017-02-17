@@ -1,7 +1,8 @@
 <template>
   <div class="container">
+    <h1>Jessboard</h1>
     <div v-for="sound in sounds" class="sound" @click="play(sound.filename)">
-      {{ sound.name }}
+      <h2>{{ sound.name }}</h2>
     </div>
   </div>
 </template>
@@ -39,8 +40,6 @@ export default {
           name: "hi nathalie",
           filename: "nathalie"
         }, {
-          name: "giggles"
-        }, {
           name: "chuckle",
           filename: "chuckle"
         }
@@ -62,6 +61,8 @@ export default {
 .container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
 }
 
 .sound {
@@ -71,5 +72,21 @@ export default {
   margin: 20px;
   height: 140px;
   width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #8A2BE2;
+  color: white;
+}
+
+.sound:hover {
+  cursor: pointer;
+  background-color: #6317a9;
+}
+
+h1 {
+  width: 100%;
+  font-weight: 200;
+  font-size: 72px;
 }
 </style>
