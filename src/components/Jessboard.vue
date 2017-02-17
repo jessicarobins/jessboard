@@ -1,47 +1,57 @@
 <template>
   <div class="container">
-    <div v-for="sound in sounds" class="sound">
+    <div v-for="sound in sounds" class="sound" @click="play(sound.filename)">
       {{ sound.name }}
     </div>
   </div>
 </template>
 
 <script>
+
+var tony = require('../assets/tony.mp3')
+
 export default {
   name: 'jessboard',
   data () {
     return {
       sounds: [{
           name: "tony",
-          filename: "tony.mp3"
+          filename: "tony",
         }, {
           name: "it's lunchtime",
-          filename: "lunchtime.mp3"
+          filename: "lunchtime"
         }, {
           name: "hey brian",
-          filename: "brian.mp3"
+          filename: "brian"
         }, {
           name: "oh nooo",
-          filename: "ohno.mp3"
+          filename: "ohno"
         }, {
           name: "laters",
-          filename: "laters.mp3"
+          filename: "laters"
         }, {
           name: "get outta here bear",
-          filename: "bear.mp3"
+          filename: "bear"
         },{
           name: "hey you guys",
-          filename: "heyyouguys.mp3"
+          filename: "heyyouguys"
         }, {
           name: "hi nathalie",
-          filename: "nathalie.mp3"
+          filename: "nathalie"
         }, {
           name: "giggles"
         }, {
           name: "chuckle",
-          filename: "chuckle.mp3"
+          filename: "chuckle"
         }
       ]
+    }
+  },
+  methods: {
+    play: function(sound) {
+      const fileName = require(`../assets/${sound}.mp3`)
+      const audio = new Audio(fileName)
+      audio.play()
     }
   }
 }
